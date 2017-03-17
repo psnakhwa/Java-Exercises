@@ -31,4 +31,23 @@ public class TicTacToe{
 		System.out.println();
 		System.out.println("######################");
 	}
+
+	// Loop through all cells of the board and if one is found to be empty then resturn false
+	// Otherwise return true i.e board is full
+	public boolean isBoardFull(){
+		boolean isFUll = true;
+
+		for(int i=0; i<3; i++){
+			for(int j=0; j<3; j++){
+				if(board[i][j] == '-') return false;
+			}
+		}
+		return true;
+	}
+
+	// Check for Win
+	public boolean checkForWin(){
+		return (checkRowsForWin() || checkColsForWin() || checkDiagForWin());
+	}
+
 }
